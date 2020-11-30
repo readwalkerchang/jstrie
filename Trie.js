@@ -25,7 +25,16 @@ Trie.prototype.insert = function(word) {
  * @return {boolean}
  */
 Trie.prototype.search = function(word) {
-    
+    let position;
+    this.dictionary.forEach(function(number,index) {
+        if (number == word){
+            position = true;
+        }
+        else{
+            position = false;
+        }
+    });
+    return position;
 };
 
 /**
