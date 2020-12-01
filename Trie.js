@@ -25,16 +25,16 @@ Trie.prototype.insert = function(word) {
  * @return {boolean}
  */
 Trie.prototype.search = function(word) {
-    let position;
+    let lookup;
     this.dictionary.forEach(function(number,index) {
         if (number == word){
-            position = true;
+            lookup = true;
         }
         else{
-            position = false;
+            lookup = false;
         }
     });
-    return position;
+    return lookup;
 };
 
 /**
@@ -43,7 +43,7 @@ Trie.prototype.search = function(word) {
  * @return {boolean}
  */
 Trie.prototype.startsWith = function(prefix) {
-    
+ 
 };
 
 /** 
