@@ -40,7 +40,13 @@ Trie.prototype.search = function(word) {
  * @return {boolean}
  */
 Trie.prototype.startsWith = function(prefix) {
- 
+    let lookup = false;
+    this.dictionary.forEach(function(item) {
+        if (item.startsWith(prefix) === true){
+            lookup = true;
+        }
+    });
+    return lookup;
 };
 
 /** 
