@@ -25,13 +25,10 @@ Trie.prototype.insert = function(word) {
  * @return {boolean}
  */
 Trie.prototype.search = function(word) {
-    let lookup;
-    this.dictionary.forEach(function(number,index) {
-        if (number == word){
+    let lookup = false;
+    this.dictionary.forEach(function(item) {
+        if (item === word){
             lookup = true;
-        }
-        else{
-            lookup = false;
         }
     });
     return lookup;

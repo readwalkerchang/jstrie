@@ -4,4 +4,5 @@ obj.insert('apple');
 obj.insert('orange');
 obj.insert('banana');
 
-console.log(obj.startsWith('ban'));
+console.log(obj.search('ap'));
+console.log(obj.search('apple'));
