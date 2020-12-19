@@ -28,7 +28,50 @@ function generateAlphabets() {
 var Trie = function(word, prefix, dictionary) {
   this.word = word;
   this.prefix = prefix;
-  this.dictionary = generateDict();
+  this.generateAlphabets = function(){
+        let alphabets = [];
+    var start = 'a'.charCodeAt(0); //the value is 97
+    var last  = 'z'.charCodeAt(0); //the value is 122
+    for (var i = start; i <= last; i++) {
+      alphabets.push(String.fromCharCode(i));
+    }
+    return alphabets;
+  }
+  this.generateDict = function(){
+    let alphabets = this.generateAlphabets();
+    let dict = new Object();
+    let i ;
+    for(i =0;  i< alphabets.length ;i++ ){
+      dict[alphabets[i]] = [];
+    }
+    return dict;
+  }
+  this.dictionary = this.generateDict();
 };
-console.log(generateDict());
+
+
+
+/**
+ * Inserts a word into the trie. 
+ * @param {string} word
+ * @return {void}
+ */
+
+
+Trie.prototype.insert = function(word) {
+  let dict = this.dictionary.z;
+  
+  for (const property in dict) {
+    if(`${property}`=== word[0]){
+      dict.push(word);
+  }
+    else{
+      return 'Hello!'
+}
+
+
+  console.log( 'a' === word[0]) ;
+};
+
+
 module.exports = Trie; //export modules
