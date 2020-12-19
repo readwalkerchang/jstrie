@@ -59,18 +59,14 @@ var Trie = function(word, prefix, dictionary) {
 
 
 Trie.prototype.insert = function(word) {
-  let dict = this.dictionary.z;
+  let dict = this.dictionary;
   
   for (const property in dict) {
     if(`${property}`=== word[0]){
-      dict.push(word);
+      console.log( `${property}`);
+    }
   }
-    else{
-      return 'Hello!'
-}
 
-
-  console.log( 'a' === word[0]) ;
 };
 
 
