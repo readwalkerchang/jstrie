@@ -94,5 +94,23 @@ Trie.prototype.search = function(word) {
   return lookup;
 };
 
-
+/**
+ * Returns if there is any word in the trie that starts with the given prefix. 
+ * @param {string} prefix
+ * @return {boolean}
+ */
+Trie.prototype.startsWith = function(prefix) {
+  let lookup = false;
+  let dict = this.dictionary;
+  for (const property in dict) {
+    if(`${property}`=== prefix[0]){
+      dict[property].forEach(function(item) {
+        if (item.startsWith(prefix) === true){
+          lookup = true;
+      }
+    });
+    }
+  }
+  return lookup;
+};
 module.exports = Trie; //export modules
