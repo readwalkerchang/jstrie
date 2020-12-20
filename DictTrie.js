@@ -65,12 +65,33 @@ var Trie = function(word, prefix, dictionary) {
 Trie.prototype.insert = function(word) {
   let dict = this.dictionary;
   
+  //these codes can be promise function
   for (const property in dict) {
     if(`${property}`=== word[0]){
       dict[property].push(word);
     }
   }
 
+};
+
+/**
+ * Returns if the word is in the trie. 
+ * @param {string} word
+ * @return {boolean}
+ */
+Trie.prototype.search = function(word) {
+  let lookup = false;
+  let dict = this.dictionary;
+  for (const property in dict) {
+    if(`${property}`=== word[0]){
+      dict[property].forEach(function(item) {
+        if (item === word){
+           lookup = true;
+        }
+    });
+    }
+  }
+  return lookup;
 };
 
 

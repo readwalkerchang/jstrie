@@ -1,12 +1,10 @@
 var Trie = require('./DictTrie.js'); //Include Modules
 var trie = new Trie();
-//Testing 3// pass
+//Testing 4// pass
 
 trie.insert('apple');
-trie.insert('app');
-trie.insert('banana');
-trie.insert('orange');
-console.log(trie.dictionary);
+
+console.log(trie.search('ap'));
 
 
 //Testing 2//pass
